@@ -1,4 +1,24 @@
 RedditClone::Application.routes.draw do
+  get "sessions/create"
+
+  get "sessions/destroy"
+
+  get "sessions/new"
+
+  get "users/create"
+
+  get "users/destroy"
+
+  get "users/edit"
+
+  get "users/index"
+
+  get "users/new"
+
+  get "users/show"
+
+  get "users/update"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
