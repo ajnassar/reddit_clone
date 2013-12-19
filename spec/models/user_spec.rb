@@ -33,4 +33,23 @@ describe User do
     it {should have_many(:moderated_subs)}
     it {should have_many(:comments)}
   end
+
+  context "Find By Credentials: " do
+    before(:each) do
+      user = User.create!(:username => "panda", :password => "bamboo")
+    end
+
+    it "Should  return nil with wrong password" do
+      expect(User.find_by_credentials("panda", "candycane")).to be_nil
+    end
+
+    it "Should  return nil with wrong username" do
+      expect(User.find_by_credentials("santa", "bamboo")).to be_nil
+    end
+
+    it "Should return the user" do
+      expect(User.find_by_credentials("panda", "bamboo")).to be_an_instance_of(User)
+    end
+
+  end
 end
