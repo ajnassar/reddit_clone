@@ -27,4 +27,10 @@ describe User do
       expect(user.password_digest).to_not be_nil
     end
   end
+
+  context "Associations: " do
+    it {should have_many(:links)}
+    it {should have_many(:moderated_subs)}
+    it {should have_many(:comments)}
+  end
 end

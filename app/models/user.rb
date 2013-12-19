@@ -5,6 +5,15 @@ class User < ActiveRecord::Base
   validates :username, :session_token, :password_digest, presence: true
   validates :password, presence: true, on: :create
 
+  has_many :links
+  has_many :comments
+  has_many(
+    :moderated_subs,
+    :primary_key => :id,
+    :foreign_key => :moderator_id,
+    :class_name => "Sub"
+  )
+
   def self.find_by_credentials(username, pass)
     user = User.find_by_username(username)
     if user
