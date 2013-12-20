@@ -2,17 +2,17 @@
 <form action="<%= links_url %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="title">Title</label>
-  <input type="text" name="link[title]" id="title">
+  <input type="text" name="link[title]" id="title"><br>
   <label for="url">URL</label>
-  <input type="text" name="link[url]" id="url">
-  <label for="body">Body</label>
-  <textarea id="body" name="link[body]"></textarea>
-  <label for="subs">Subs</label>
+  <input type="text" name="link[url]" id="url"><br>
+  <label for="body">Body</label><br>
+  <textarea id="body" name="link[body]"></textarea><br>
+  <label for="subs">Subs</label><br>
   <select multiple id="subs" name="link[sub_ids][]">
     <option value="" ></option>
     <% Sub.all.each do |sub| %>
       <option value="<%= sub.id %>" ><%= sub.name %></option>
     <% end %>
-  </select>
+  </select><br>
   <input type="submit" value="Make new link">
 </form>

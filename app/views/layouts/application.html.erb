@@ -7,7 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= flash[:errors] %>
+  <% if flash[:errors] %>
+  <ul>
+  <% flash[:errors].each do |err| %>
+  <li>
+    <%= err %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
 
   <% if logged_in? %>
   <%= current_user.username %>
