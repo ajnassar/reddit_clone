@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe UsersController do
-
+describe SubsController do
+  #
   # describe "GET 'create'" do
   #   it "returns http success" do
   #     get 'create'
@@ -23,9 +23,9 @@ describe UsersController do
   #   end
   # end
   #
-  # describe "GET 'index'" do
+  # describe "GET 'update'" do
   #   it "returns http success" do
-  #     get 'index'
+  #     get 'update'
   #     response.should be_success
   #   end
   # end
@@ -37,16 +37,16 @@ describe UsersController do
   #   end
   # end
   #
-  # describe "GET 'show'" do
+  # describe "GET 'index'" do
   #   it "returns http success" do
-  #     get 'show'
+  #     get 'index'
   #     response.should be_success
   #   end
   # end
   #
-  # describe "GET 'update'" do
+  # describe "GET 'show'" do
   #   it "returns http success" do
-  #     get 'update'
+  #     get 'show'
   #     response.should be_success
   #   end
   # end

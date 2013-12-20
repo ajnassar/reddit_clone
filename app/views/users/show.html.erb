@@ -1,2 +1,20 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.username %></h1>
+
+<ul>
+  <% @user.moderated_subs.each do |sub| %>
+    <li>
+      <%= link_to(sub.name, sub_url(sub)) %>
+    </li>
+  <% end %>
+</ul>
+<h2>Create A Sub</h2>
+
+<form action="<%= subs_url %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="sub_name">Name</label>
+  <input id="sub_name" type="text" name="sub[name]">
+
+  <input type="submit" value="Create Sub">
+
+</form>

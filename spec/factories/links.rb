@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :link do
-    title "MyString"
-    url "MyString"
+    title Faker::Name.title
+    url Faker::Internet.url
     user_id 1
-    body "MyText"
+    body Faker::Lorem.paragraph
   end
 end

@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
     :class_name => "Sub"
   )
 
+
   def self.find_by_credentials(username, pass)
     user = User.find_by_username(username)
     if user
